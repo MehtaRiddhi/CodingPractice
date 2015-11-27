@@ -13,7 +13,7 @@ public class BalancedBinaryTree110 {
             val = x;
         }
     }
-    
+
     public int treeHeight(TreeNode root) {
         if (root == null) return 0;
 
