@@ -1,4 +1,4 @@
-package com.gmail.theandriicherniak.leetcode;
+package com.gmail.theandriicherniak.leetcode.easy;
 
 /**
  * Created by andriicherniak on 11/26/15.
