@@ -6,8 +6,8 @@ package com.gmail.theandriicherniak.leetcode.easy;
 public class Main {
     public static void main(java.lang.String [] args){
         System.out.println("running");
-        SymmetricTree101 test = new SymmetricTree101();
-        SymmetricTree101.TreeNode t1 = test.new TreeNode(1);
+        E101_SymmetricTree test = new E101_SymmetricTree();
+        E101_SymmetricTree.TreeNode t1 = test.new TreeNode(1);
 
         System.out.println(test.isSymmetric(t1));
     }

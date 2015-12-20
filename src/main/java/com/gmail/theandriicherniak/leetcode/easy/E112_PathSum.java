@@ -3,7 +3,7 @@ package com.gmail.theandriicherniak.leetcode.easy;
 /**
  * Created by andriicherniak on 11/27/15.
  */
-public class PathSum112 {
+public class E112_PathSum {
     public class TreeNode {
         int val;
         TreeNode left;

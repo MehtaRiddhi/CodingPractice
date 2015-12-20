@@ -3,7 +3,7 @@ package com.gmail.theandriicherniak.leetcode.easy;
 /**
  * Created by andriicherniak on 11/27/15.
  */
-public class MaximumDepthBinaryTree104 {
+public class E104_MaximumDepthBinaryTree {
     public class TreeNode {
         int val;
         TreeNode left;

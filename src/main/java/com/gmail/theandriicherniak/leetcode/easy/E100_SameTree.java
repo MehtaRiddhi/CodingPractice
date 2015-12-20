@@ -3,7 +3,7 @@ package com.gmail.theandriicherniak.leetcode.easy;
 /**
  * Created by andriicherniak on 12/20/15.
  */
-public class SameTree100 {
+public class E100_SameTree {
     public class TreeNode {
              int val;
              TreeNode left;

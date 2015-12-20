@@ -6,7 +6,7 @@ package com.gmail.theandriicherniak.leetcode.easy;
 
 import java.util.*;
 
-public class BinaryTreeLevelOrderTraversal102 {
+public class E102_BinaryTreeLevelOrderTraversal {
     public class TreeNode {
         int val;
         TreeNode left;

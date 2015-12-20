@@ -3,7 +3,7 @@ package com.gmail.theandriicherniak.leetcode.easy;
 /**
  * Created by andriicherniak on 12/13/15.
  */
-public class InvertBinaryTree226 {
+public class E226_InvertBinaryTree {
 
     public class TreeNode {
         int val;

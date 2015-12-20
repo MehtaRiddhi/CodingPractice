@@ -4,7 +4,7 @@ package com.gmail.theandriicherniak.leetcode.easy;
  * Created by andriicherniak on 12/14/15.
  */
 
-public class LowestCommonAncestor235 {
+public class E235_LowestCommonAncestor {
 
     public class TreeNode {
         int val;

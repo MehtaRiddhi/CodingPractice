@@ -3,7 +3,7 @@ package com.gmail.theandriicherniak.leetcode.easy;
 /**
  * Created by andriicherniak on 11/26/15.
  */
-public class MinimumDepthBinaryTree111 {
+public class E111_MinimumDepthBinaryTree {
     public class TreeNode {
         int val;
         TreeNode left;

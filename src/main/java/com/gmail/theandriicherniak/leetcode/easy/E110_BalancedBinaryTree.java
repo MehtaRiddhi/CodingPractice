@@ -3,7 +3,7 @@ package com.gmail.theandriicherniak.leetcode.easy;
 /**
  * Created by andriicherniak on 11/26/15.
  */
-public class BalancedBinaryTree110 {
+public class E110_BalancedBinaryTree {
     public class TreeNode {
         int val;
         TreeNode left;

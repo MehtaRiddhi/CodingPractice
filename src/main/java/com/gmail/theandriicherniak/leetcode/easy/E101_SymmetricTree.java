@@ -3,7 +3,7 @@ package com.gmail.theandriicherniak.leetcode.easy;
 /**
  * Created by andriicherniak on 12/13/15.
  */
-public class SymmetricTree101 {
+public class E101_SymmetricTree {
 
     public class TreeNode {
         int val;
