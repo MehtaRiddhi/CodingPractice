@@ -6,9 +6,7 @@ package com.gmail.theandriicherniak.leetcode.easy;
 public class Main {
     public static void main(java.lang.String [] args){
         System.out.println("running");
-
-        E249_GroupShiftedStrings ss = new E249_GroupShiftedStrings();
-        ss.groupStrings(new String[]{"az","yx"});
-
+        E263_UglyNumber n = new E263_UglyNumber();
+        n.isUgly(-2147483648);
     }
 }
