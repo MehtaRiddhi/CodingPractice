@@ -7,8 +7,8 @@ public class Main {
     public static void main(java.lang.String [] args){
         System.out.println("running");
 
-        E172_FactorialTrailingZeroes z = new E172_FactorialTrailingZeroes();
-
+        E249_GroupShiftedStrings ss = new E249_GroupShiftedStrings();
+        ss.groupStrings(new String[]{"az","yx"});
 
     }
 }
