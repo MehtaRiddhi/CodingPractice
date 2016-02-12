@@ -7,8 +7,8 @@ public class Main {
     public static void main(java.lang.String [] args){
         System.out.println("running");
 
-        E325_MaximumSizeSubarraySumEqualsK model = new E325_MaximumSizeSubarraySumEqualsK();
-        System.out.print(model.maxSubArrayLen(new int[]{1,-1,5,-2,3}, 3));
+        E172_FactorialTrailingZeroes z = new E172_FactorialTrailingZeroes();
+
 
     }
 }
