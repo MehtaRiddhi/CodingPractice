@@ -6,7 +6,7 @@ package com.gmail.theandriicherniak.leetcode.easy;
 public class Main {
     public static void main(java.lang.String [] args){
         System.out.println("running");
-        E263_UglyNumber n = new E263_UglyNumber();
-        n.isUgly(-2147483648);
+        E228_SummaryRanges r = new E228_SummaryRanges();
+        r.summaryRanges(new int[]{-2147483648,-2147483647,2147483647});
     }
 }
