@@ -3,7 +3,7 @@ package com.gmail.theandriicherniak.leetcode.easy;
 /**
  * Created by andriicherniak on 2/2/16.
  */
-public class E150_MinStack {
+public class E155_MinStack {
     private int[][] stack = new int[50000][2];
     private int pos = -1;
 
