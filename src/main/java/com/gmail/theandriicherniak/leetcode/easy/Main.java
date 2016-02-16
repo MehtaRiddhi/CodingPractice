@@ -6,7 +6,7 @@ package com.gmail.theandriicherniak.leetcode.easy;
 public class Main {
     public static void main(java.lang.String [] args){
         System.out.println("running");
-        E6_ZigZagConversion z = new E6_ZigZagConversion();
-        z.convert("ABCDEF", 3);
+        E165_CompareVersionNumbers c = new E165_CompareVersionNumbers();
+        System.out.print(c.compareVersion("1.0.1", "1"));
     }
 }
