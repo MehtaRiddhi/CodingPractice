@@ -6,7 +6,7 @@ package com.gmail.theandriicherniak.leetcode.easy;
 public class Main {
     public static void main(java.lang.String [] args){
         System.out.println("running");
-        E165_CompareVersionNumbers c = new E165_CompareVersionNumbers();
-        System.out.print(c.compareVersion("1.0.1", "1"));
+        E204_CountPrimes p = new E204_CountPrimes();
+        System.out.println(p.countPrimes(11));
     }
 }
