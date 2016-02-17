@@ -6,7 +6,7 @@ package com.gmail.theandriicherniak.leetcode.easy;
 public class Main {
     public static void main(java.lang.String [] args){
         System.out.println("running");
-        E20_ValidParentheses p = new E20_ValidParentheses();
-        System.out.println(p.isValid("[({(())}[()])]"));
+        E38_CountAndSay c = new E38_CountAndSay();
+        System.out.println(c.countAndSay(5));
     }
 }
