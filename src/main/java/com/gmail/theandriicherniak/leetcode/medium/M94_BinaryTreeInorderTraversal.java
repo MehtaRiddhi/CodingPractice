@@ -7,7 +7,7 @@ import java.util.List;
 import java.util.ArrayList;
 import java.util.Stack;
 
-public class E94_BinaryTreeInorderTraversal {
+public class M94_BinaryTreeInorderTraversal {
     public class TreeNode {
              int val;
              TreeNode left;
