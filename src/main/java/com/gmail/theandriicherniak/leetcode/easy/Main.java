@@ -1,4 +1,5 @@
 package com.gmail.theandriicherniak.leetcode.easy;
+import com.gmail.theandriicherniak.leetcode.medium.*;
 
 /**
  * Created by andriicherniak on 11/23/15.
@@ -6,7 +7,7 @@ package com.gmail.theandriicherniak.leetcode.easy;
 public class Main {
     public static void main(java.lang.String [] args){
         System.out.println("running");
-        E38_CountAndSay c = new E38_CountAndSay();
-        System.out.println(c.countAndSay(5));
+        M245_ShortestWordDistanceIII wd = new M245_ShortestWordDistanceIII();
+        wd.shortestWordDistance(new String[]{"a","a"}, "a", "a");
     }
 }
