@@ -7,12 +7,7 @@ public class Main {
     public static void main(java.lang.String [] args){
         System.out.println("running");
 
-        M78_Subsets s = new M78_Subsets();
-        s.subsets(new int []{0,1,2,3,4,5,6,7,8,9,10});
-
-
-
-
-
+        M320_GeneralizedAbbreviation a = new M320_GeneralizedAbbreviation();
+        a.generateAbbreviations("word");
     }
 }
