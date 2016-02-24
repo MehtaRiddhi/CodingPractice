@@ -4,6 +4,7 @@ package com.gmail.theandriicherniak.leetcode.medium;
  * Created by andriicherniak on 2/23/16.
  */
 import java.util.*;
+
 public class M208_ImplementTriePrefixTree {
     class TrieNode {
         HashMap<Character, TrieNode> links = new HashMap<Character, TrieNode>();
