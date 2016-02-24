@@ -7,16 +7,8 @@ public class Main {
     public static void main(java.lang.String [] args){
         System.out.println("running");
 
-        M211_AddSearchWord t = new M211_AddSearchWord();
-        t.addWord("bad");
-        t.addWord("dad");
-        t.addWord("mad");
-
-        System.out.println(t.search("pad"));
-        System.out.println(t.search("bad"));
-        System.out.println(t.search(".ad"));
-        System.out.println(t.search("b.."));
-        System.out.println(t.search("b.a"));
+        M78_Subsets s = new M78_Subsets();
+        s.subsets(new int []{0,1,2,3,4,5,6,7,8,9,10});
 
 
 
