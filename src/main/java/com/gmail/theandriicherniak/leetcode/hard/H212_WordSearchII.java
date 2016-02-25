@@ -1,11 +1,12 @@
-package com.gmail.theandriicherniak.leetcode.medium;
+package com.gmail.theandriicherniak.leetcode.hard;
 
 /**
- * Created by andriicherniak on 2/23/16.
+ * Created by andriicherniak on 2/24/16.
  */
+
 import java.util.*;
 
-public class M208_ImplementTriePrefixTree {
+public class H212_WordSearchII {
     class TrieNode {
         HashMap<Character, TrieNode> links = new HashMap<Character, TrieNode>();
         boolean isLeaf = false;
@@ -63,5 +64,50 @@ public class M208_ImplementTriePrefixTree {
             return true;
         }
     }
+
+    private void searchHelper(char[][] board, boolean[][] bitmap, Trie trie, int r, int c, int R, int C, String prefix, HashSet<String> buffer ){
+        if (r < 0 || c < 0 || r >= R || c >= C) return;
+        if (bitmap[r][c]) return;
+        String s = prefix + board[r][c];
+
+        if (!trie.startsWith(s)) return;
+
+        if (trie.search(s)) buffer.add(s);
+
+        bitmap[r][c] = true;
+
+        searchHelper(board, bitmap, trie, r - 1, c, R, C, s, buffer);
+        searchHelper(board, bitmap, trie, r, c - 1, R, C, s, buffer);
+        searchHelper(board, bitmap, trie, r + 1, c, R, C, s, buffer);
+        searchHelper(board, bitmap, trie, r, c + 1, R, C, s, buffer);
+
+        bitmap[r][c] = false;
+    }
+
+    public List<String> findWords(char[][] board, String[] words) {
+        ArrayList<String> result = new ArrayList<String>();
+        HashSet<String> buffer = new HashSet<String>();
+
+        int R = board.length;
+        if (R == 0) return result;
+        int C = board[0].length;
+
+        boolean[][] bitmap = new boolean[R][C];
+
+        Trie trie = new Trie();
+        for (String word : words) trie.insert(word);
+
+        for (int r = 0; r < R; r++){
+            for (int c = 0; c < C; c++){
+                searchHelper(board, bitmap, trie, r, c, R, C, "", buffer);
+            }
+        }
+
+        for (String word : buffer) result.add(word);
+        System.out.println(result);
+
+        return result;
+    }
+
 
 }
