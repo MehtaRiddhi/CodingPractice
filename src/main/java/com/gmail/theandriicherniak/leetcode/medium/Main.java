@@ -10,8 +10,8 @@ public class Main {
     public static void main(java.lang.String [] args){
         System.out.println("running");
 
-        M39_CombinationSum s = new M39_CombinationSum();
-        s.combinationSum(new int[]{2,3,6,7}, 7);
+        M40_CombinationSumII s = new M40_CombinationSumII();
+        s.combinationSum2(new int[]{10,1,2,7,6,1,5}, 8);
 
     }
 }
