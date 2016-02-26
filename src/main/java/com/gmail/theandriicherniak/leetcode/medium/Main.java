@@ -10,7 +10,7 @@ public class Main {
     public static void main(java.lang.String [] args){
         System.out.println("running");
 
-        M77_Combinations c = new M77_Combinations();
-        c.combine(4, 2);
+        M131_PalindromePartitioning pp = new M131_PalindromePartitioning();
+        pp.partition("aab");
     }
 }
