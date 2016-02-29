@@ -10,7 +10,7 @@ public class Main {
     public static void main(java.lang.String [] args){
         System.out.println("running");
 
-        M93_RestoreIPAddresses ip = new M93_RestoreIPAddresses();
-        ip.restoreIpAddresses("25525511135");
+        M17_LetterCombinations c = new M17_LetterCombinations();
+        c.letterCombinations("23");
     }
 }
