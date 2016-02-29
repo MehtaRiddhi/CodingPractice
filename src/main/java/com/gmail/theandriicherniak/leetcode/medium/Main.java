@@ -10,7 +10,7 @@ public class Main {
     public static void main(java.lang.String [] args){
         System.out.println("running");
 
-        M47_PermutationsII p = new M47_PermutationsII();
-        p.permuteUnique(new int[]{1,1,1,1,1,1,1,2});
+        M93_RestoreIPAddresses ip = new M93_RestoreIPAddresses();
+        ip.restoreIpAddresses("25525511135");
     }
 }

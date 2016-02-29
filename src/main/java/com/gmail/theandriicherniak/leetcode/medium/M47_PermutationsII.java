@@ -41,7 +41,7 @@ public class M47_PermutationsII {
 
         int L = nums.length;
         permutationDFS(nums, 0, L, buffer);
-        
+
         for(List<Integer> r :  buffer) result.add(r);
 
         return result;
