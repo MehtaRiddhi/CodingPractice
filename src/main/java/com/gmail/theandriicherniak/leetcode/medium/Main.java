@@ -10,7 +10,7 @@ public class Main {
     public static void main(java.lang.String [] args){
         System.out.println("running");
 
-        M17_LetterCombinations c = new M17_LetterCombinations();
-        c.letterCombinations("23");
+        M22_GenerateParentheses p = new M22_GenerateParentheses();
+        p.generateParenthesis(3);
     }
 }
