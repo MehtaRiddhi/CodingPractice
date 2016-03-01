@@ -1,6 +1,7 @@
-package com.gmail.theandriicherniak.leetcode.easy;
+package com.gmail.theandriicherniak.leetcode.medium;
 
 
+import com.gmail.theandriicherniak.leetcode.easy.E293_FlipGame;
 import com.gmail.theandriicherniak.leetcode.hard.H10_RegularExpressionMatching;
 import com.gmail.theandriicherniak.leetcode.hard.H212_WordSearchII;
 import com.gmail.theandriicherniak.leetcode.medium.M267_PalindromePermutationII;
@@ -15,7 +16,7 @@ public class Main {
     public static void main(java.lang.String [] args){
         System.out.println("running");
 
-        E293_FlipGame f = new E293_FlipGame();
-        f.generatePossibleNextMoves("++++");
+        M53_MaximumSubarray s = new M53_MaximumSubarray();
+        System.out.println(s.maxSubArray(new int[]{-2,-1}));
     }
 }
