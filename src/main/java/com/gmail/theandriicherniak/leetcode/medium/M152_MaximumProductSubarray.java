@@ -35,7 +35,7 @@ public class M152_MaximumProductSubarray {
             if (bestProductNegative[i] >= 0) bestProductNegative[i] = 1;
 
         }
-        
+
 
         return result;
     }
