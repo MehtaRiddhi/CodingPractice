@@ -13,10 +13,16 @@ import java.util.Arrays;
  * Created by andriicherniak on 11/23/15.
  */
 public class Main {
-    public static void main(java.lang.String [] args){
+    public static void main(java.lang.String[] args) {
         System.out.println("running");
 
-        M213_HouseRobberII r = new M213_HouseRobberII();
-        System.out.println(r.rob(new int[]{1,3,1,3,100}));
+        M74_Search2DMatrix s = new M74_Search2DMatrix();
+        boolean r = s.searchMatrix(new int[][]{
+                new int[]{1},
+                new int[]{3},
+        }, 3);
+
+        System.out.println(r);
+
     }
 }
