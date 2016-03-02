@@ -16,7 +16,7 @@ public class Main {
     public static void main(java.lang.String [] args){
         System.out.println("running");
 
-        M152_MaximumProductSubarray p = new M152_MaximumProductSubarray();
-        System.out.println(p.maxProduct(new int[]{2,3,-2,4}));
+        M213_HouseRobberII r = new M213_HouseRobberII();
+        System.out.println(r.rob(new int[]{1,3,1,3,100}));
     }
 }
