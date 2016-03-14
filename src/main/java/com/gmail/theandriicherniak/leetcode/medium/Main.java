@@ -7,7 +7,9 @@ public class Main {
     public static void main(java.lang.String[] args) {
         System.out.println("running");
 
-        M153_FindMinimumRotatedSortedArray m = new M153_FindMinimumRotatedSortedArray();
-        System.out.println(m.findMin(new int[]{4, 5, 6, 7, 0, 1, 2}));
+        M50_Pow p = new M50_Pow();
+        for (int i = 0; i <= 10; i++) {
+            System.out.println(i + " " + p.myPow(2, i));
+        }
     }
 }
