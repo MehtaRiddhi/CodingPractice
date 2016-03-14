@@ -7,9 +7,8 @@ public class Main {
     public static void main(java.lang.String[] args) {
         System.out.println("running");
 
-        M50_Pow p = new M50_Pow();
-        for (int i = 0; i <= 10; i++) {
-            System.out.println(i + " " + p.myPow(2, i));
-        }
+        M34_SearchRange sr = new M34_SearchRange();
+        int [] range = sr.searchRange(new int[]{5, 7, 7, 8, 8, 10}, 8);
+        System.out.println(range[0] + " " + range[1]);
     }
 }
