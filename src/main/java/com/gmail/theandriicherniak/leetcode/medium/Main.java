@@ -8,7 +8,7 @@ public class Main {
     public static void main(java.lang.String[] args) {
         System.out.println("running");
 
-        M209_MinimumSizeSubarraySum ms = new M209_MinimumSizeSubarraySum();
-        System.out.println(ms.minSubArrayLen(7, new int[]{2,3,1,2,4,3}));
+        M300_LongestIncreasingSubsequence lis = new M300_LongestIncreasingSubsequence();
+        System.out.println(lis.lengthOfLIS(new int [] {10, 9, 2, 5, 3, 7, 101, 18}));
     }
 }
