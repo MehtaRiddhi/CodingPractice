@@ -8,7 +8,7 @@ public class Main {
     public static void main(java.lang.String[] args) {
         System.out.println("running");
 
-        M162_FindPeakElement p = new M162_FindPeakElement();
-        System.out.println(p.findPeakElement(new int[]{2, 1}));
+        M209_MinimumSizeSubarraySum ms = new M209_MinimumSizeSubarraySum();
+        System.out.println(ms.minSubArrayLen(7, new int[]{2,3,1,2,4,3}));
     }
 }
