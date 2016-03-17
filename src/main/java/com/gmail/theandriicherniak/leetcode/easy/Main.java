@@ -7,8 +7,8 @@ public class Main {
     public static void main(String[] args){
         System.out.println("runing easy ");
 
-        M191_Number1Bits nb = new M191_Number1Bits();
-        System.out.println(nb.hammingWeight(1));
+        M190_ReverseBits r = new M190_ReverseBits();
+        System.out.println(r.reverseBits(1));
 
     }
 }

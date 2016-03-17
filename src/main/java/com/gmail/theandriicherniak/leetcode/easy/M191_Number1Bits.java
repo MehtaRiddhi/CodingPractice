@@ -13,7 +13,6 @@ public class M191_Number1Bits {
                 count++;
             }
             bitMask <<= 1;
-
         }
         return count;
     }

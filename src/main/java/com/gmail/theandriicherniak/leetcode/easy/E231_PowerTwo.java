@@ -6,12 +6,15 @@ package com.gmail.theandriicherniak.leetcode.easy;
 public class E231_PowerTwo {
     public boolean isPowerOfTwo(int n) {
         if (n <= 0) return false;
-        boolean result = true;
-        while (result && (n > 1)){
-            int mult = n / 2;
-            if (mult * 2 != n) result = false;
-            n = mult;
+        int bitMask = 1;
+        int count = 0;
+        for(int i=1; i<= 32; i++){
+            if((n & bitMask) != 0){
+                count++;
+            }
+            bitMask <<= 1;
+            if (count > 1) return false;
         }
-        return result;
+        return (count == 1);
     }
 }
