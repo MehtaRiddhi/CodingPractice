@@ -10,8 +10,8 @@ public class Main {
     public static void main(java.lang.String[] args) {
         System.out.println("running medium ");
 
-        M136_SingleNumber n = new M136_SingleNumber();
-        System.out.println(n.singleNumber(new int [] {1, 2,4,2,1}));
+        M268_MissingNumber n = new M268_MissingNumber();
+        System.out.println(n.missingNumber(new int[]{0, 1, 3}));
 
     }
 }
