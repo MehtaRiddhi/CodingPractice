@@ -10,14 +10,8 @@ public class Main {
     public static void main(java.lang.String[] args) {
         System.out.println("running medium ");
 
-        M15_3Sum s = new M15_3Sum();
-        int [] data = new int [] {-2, 0,0,2,2};
-
-        List<List<Integer>> result = s.threeSum(data);
-
-        for (List<Integer> r : result){
-            System.out.println(r);
-        }
+        M136_SingleNumber n = new M136_SingleNumber();
+        System.out.println(n.singleNumber(new int [] {1, 2,4,2,1}));
 
     }
 }
