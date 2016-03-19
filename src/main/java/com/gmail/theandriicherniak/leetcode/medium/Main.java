@@ -8,7 +8,7 @@ public class Main {
     public static void main(java.lang.String[] args) {
         System.out.println("running medium ");
 
-        M260_SingleNumberIII sn = new M260_SingleNumberIII();
-        sn.singleNumber(new int[]{0, 0, 1, 2});
+        M187_RepeatedDNASequences dna = new M187_RepeatedDNASequences();
+        System.out.println(dna.findRepeatedDnaSequences("AAAAACCCCCAAAAACCCCCCAAAAAGGGTTT"));
     }
 }

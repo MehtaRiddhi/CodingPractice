@@ -19,7 +19,7 @@ public class M260_SingleNumberIII {
             if ((bitMask & v) != 0) a ^= v;
             else b ^= v;
         }
-        
+
         return new int[]{a, b};
     }
 }
