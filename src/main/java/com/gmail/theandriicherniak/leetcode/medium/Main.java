@@ -8,5 +8,7 @@ public class Main {
     public static void main(java.lang.String[] args) {
         System.out.println("running medium ");
 
+        M96_UniqueBinarySearchTrees t = new M96_UniqueBinarySearchTrees();
+        t.numTrees(2);
     }
 }
