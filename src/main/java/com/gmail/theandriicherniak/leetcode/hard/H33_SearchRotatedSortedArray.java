@@ -3,7 +3,7 @@ package com.gmail.theandriicherniak.leetcode.hard;
 /**
  * Created by andriicherniak on 3/14/16.
  */
-public class M33_SearchRotatedSortedArray {
+public class H33_SearchRotatedSortedArray {
     private int searchHelper(int [] nums, int target, int from, int to){
 
         if (nums[from] < nums[to] && (target < nums[from] || target > nums[to])) return -1;
