@@ -8,18 +8,11 @@ public class Main {
     public static void main(java.lang.String[] args) {
         System.out.println("running medium ");
 
-        int [][] matrix = new int[][]{
-                new int[]{3, 0, 1, 4, 2},
-                new int[]{5, 6, 3, 2, 1},
-                new int[]{1, 2, 0, 1, 5},
-                new int[]{4, 1, 0, 1, 7},
-                new int[]{1, 0, 3, 0, 5}
-        };
-        M304_RangeSumQuery2D rsq = new M304_RangeSumQuery2D(matrix);
+        M121_BestTimeBuySellStock stock = new M121_BestTimeBuySellStock();
 
-        System.out.println(rsq.sumRegion(2, 1, 4, 3));
-        System.out.println(rsq.sumRegion(1, 1, 2, 2));
-        System.out.println(rsq.sumRegion(1, 2, 2, 4));
+        int[] data = new int[10000];
+        for (int i = 0; i < 10000; i++) data[i] = 10000 - i;
+        System.out.println(stock.maxProfit(data));
 
 
     }
