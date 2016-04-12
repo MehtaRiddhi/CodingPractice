@@ -9,7 +9,7 @@ public class Main {
         System.out.println("running medium ");
 
         M322_CoinChange cc = new M322_CoinChange();
-        System.out.println(cc.coinChange(new int[]{474,83,404,3}, 264));
+        System.out.println(cc.coinChange(new int[]{1,2,5}, 10));
 
 
     }

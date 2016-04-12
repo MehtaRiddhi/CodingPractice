@@ -22,45 +22,37 @@ public class M322_CoinChange {
         int [] new_coins = new int[newL];
         newL = 0;
 
+        int [] buffer = new int[amount + 1];
+        int minCoinValue = Integer.MAX_VALUE;
+
+
         for (int i = 0; i < L; i++){
             if (coins[i] <= amount) {
                 new_coins[newL] = coins[i];
+                buffer[coins[i]] = 1;
+                minCoinValue = Math.min(minCoinValue, coins[i]);
                 newL ++;
             }
         }
 
-        boolean [] buffer1 = new boolean[amount + 1];
-        boolean [] buffer2 = new boolean[amount + 1];
-        boolean [] bufferTmp = null;
-
-        int minCoinValue = Integer.MAX_VALUE;
-
-        for (int i = 0; i < newL; i++) {
-            minCoinValue = Math.min(minCoinValue, new_coins[i]);
-            buffer1[new_coins[i]] = true;
-        }
-        int maxCoins = amount / minCoinValue + 1;
-
-        if (buffer1[amount]) return 1;
+        int diff;
         int newV;
 
-        for (int iteration = 2; iteration <= maxCoins; iteration ++ ){
-            for (int v = 1; v <= amount; v++){
-                if (buffer1[v]) {
-                    for (int id = 0; id < newL; id ++){
-                        newV = v + new_coins[id];
-                        if (newV <= amount) buffer2[newV] = true;
+        for (int v = minCoinValue; v <= amount; v++){
+
+            if (buffer[v] > 0){
+
+                for (int i = 0; i < newL; i++){
+                    newV = v + new_coins[i];
+                    if (newV <= amount) {
+                        if (buffer[newV] == 0) buffer[newV] = buffer[v] + 1;
+                        else buffer[newV] = Math.min(buffer[newV], buffer[v] + 1);
                     }
-                    buffer1[v] = false;
                 }
             }
-
-            bufferTmp = buffer1;
-            buffer1 = buffer2;
-            buffer2 = bufferTmp;
-
-            if (buffer1[amount]) return iteration;
         }
+
+        if (buffer[amount] > 0) return buffer[amount];
 
 
         return -1;
