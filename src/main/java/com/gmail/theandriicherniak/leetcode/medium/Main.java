@@ -8,8 +8,8 @@ public class Main {
     public static void main(java.lang.String[] args) {
         System.out.println("running medium ");
 
-        M309_BestTimeBuySellStockCooldown stock = new M309_BestTimeBuySellStockCooldown();
-        stock.maxProfit(new int[]{1, 2, 3, 0, 2});
+        M256_PaintHouse p = new M256_PaintHouse();
+        p.minCost(new int[][]{{20,18,4},{9,9,10}});
 
     }
 }
