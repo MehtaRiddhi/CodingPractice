@@ -35,7 +35,6 @@ public class M322_CoinChange {
             }
         }
 
-        int diff;
         int newV;
 
         for (int v = minCoinValue; v <= amount; v++){

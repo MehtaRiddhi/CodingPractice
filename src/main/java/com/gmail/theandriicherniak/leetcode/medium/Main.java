@@ -8,8 +8,8 @@ public class Main {
     public static void main(java.lang.String[] args) {
         System.out.println("running medium ");
 
-        M256_PaintHouse p = new M256_PaintHouse();
-        p.minCost(new int[][]{{20,18,4},{9,9,10}});
+        M279_PerfectSquares ps = new M279_PerfectSquares();
+        System.out.println(ps.numSquares(4));
 
     }
 }
