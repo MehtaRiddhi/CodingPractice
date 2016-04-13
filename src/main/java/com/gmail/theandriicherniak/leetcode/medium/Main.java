@@ -8,9 +8,8 @@ public class Main {
     public static void main(java.lang.String[] args) {
         System.out.println("running medium ");
 
-        M322_CoinChange cc = new M322_CoinChange();
-        System.out.println(cc.coinChange(new int[]{1,2,5}, 10));
-
+        M122_BestTimeBuySellStockII stock = new M122_BestTimeBuySellStockII();
+        System.out.println(stock.maxProfit(new int[]{1,2}));
 
     }
 }
