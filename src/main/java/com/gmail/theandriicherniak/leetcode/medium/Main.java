@@ -8,8 +8,8 @@ public class Main {
     public static void main(java.lang.String[] args) {
         System.out.println("running medium ");
 
-        M279_PerfectSquares ps = new M279_PerfectSquares();
-        System.out.println(ps.numSquares(4));
+        M221_MaximalSquare s = new M221_MaximalSquare();
+        System.out.println(s.maximalSquare(new char[][]{"11".toCharArray(), "11".toCharArray()}));
 
     }
 }
