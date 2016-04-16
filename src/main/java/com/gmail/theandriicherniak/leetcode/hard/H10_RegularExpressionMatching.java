@@ -4,44 +4,41 @@ package com.gmail.theandriicherniak.leetcode.hard;
  * Created by andriicherniak on 2/29/16.
  */
 public class H10_RegularExpressionMatching {
+    char [] s_ar;
+    char [] p_ar;
+    int Ls;
+    int Lp;
+    boolean[][] dp;
+
     public boolean isMatch(String s, String p) {
-        char[] s_data = s.toCharArray();
-        char[] p_data = p.toCharArray();
-        int L_s = s_data.length;
-        int L_p = p_data.length;
+        if (s == null || p == null) return false;
+        s_ar = s.toCharArray();
+        p_ar = p.toCharArray();
 
-        if (L_p == 0 || L_s == 0) return false;
+        Ls = s_ar.length;
+        Lp = p_ar.length;
 
-        boolean exactMatch = true;
-        boolean matched = true;
+        dp = new boolean[Ls + 1][Lp + 1];
 
-        if (L_p != L_s){
-            int i = 0;
-            while (i < L_p && exactMatch){
-                if (p_data[i] == '*') exactMatch = false;
-                i++;
-            }
-            i = 0;
-            while (i < L_s && exactMatch){
-                if (s_data[i] == '*') exactMatch = false;
-                i++;
-            }
+        dp[0][0] = true;
 
-            if (exactMatch) return false;
+        for (int j = 0; j < Lp; j++) {
+            if (p_ar[j] == '*' && dp[0][j-1]) dp[0][j+1] = true;
         }
 
-        if (L_p == L_s){
-            int i = 0;
-            while (i < L_p && matched && exactMatch){
-                if (s_data[i] == '*' || p_data[i] == '*') exactMatch = false;
-                if (s_data[i] != p_data[i] && !(s_data[i] == '.' || p_data[i] == '.')) matched = false;
-                i++;
+        for (int i = 0; i < Ls; i++){
+            for (int j = 0; j < Lp; j++){
+                if (s_ar[i] == p_ar[j] || p_ar[j] == '.') dp[i + 1][j + 1] = dp[i][j];
+                if (p_ar[j] == '*'){
+                    if (p_ar[j-1] != s_ar[i] && p_ar[j-1] != '.') dp[i+1][j+1] = dp[i+1][j-1];
+                    else {
+                        dp[i+1][j+1] = (dp[i+1][j] || dp[i+1][j-1] || dp[i][j+1]);
+                    }
+                }
             }
         }
-        if (exactMatch && !matched) return false;
-        if (!exactMatch){
 
-        }
-        return true;
+        return dp[Ls][Lp];
+
     }
 }

@@ -7,9 +7,11 @@ public class Main {
     public static void main(java.lang.String[] args){
         System.out.println("running hard examples");
 
-        H315_CountSmallerNumbersAfterSelf cc = new H315_CountSmallerNumbersAfterSelf();
-        int [] data = new int[]{5, 2, 6, 1};
-        System.out.println(cc.countSmaller(data));
-
+        H10_RegularExpressionMatching m = new H10_RegularExpressionMatching();
+        System.out.println(m.isMatch("aa", "a*"));
+        System.out.println(m.isMatch("aab", "c*a*b"));
+        System.out.println(m.isMatch("a", "c*a"));
+        System.out.println(m.isMatch("a", "c*"));
+        System.out.println(m.isMatch("a", "a*"));
     }
 }
