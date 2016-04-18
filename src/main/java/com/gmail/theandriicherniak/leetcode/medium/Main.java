@@ -7,9 +7,7 @@ public class Main {
     public static void main(java.lang.String[] args) {
         System.out.println("running medium ");
 
-        M75_SortColors sc = new M75_SortColors();
-        int [] nums = new int[]{0,0};
-        sc.sortColors(nums);
-        for (int i = 0; i < nums.length; i++) System.out.println(nums[i]);
+        M259_3SumSmaller ss = new M259_3SumSmaller();
+        System.out.println(ss.threeSumSmaller(new int[]{-1,1,-1,-1}, -1));
     }
 }
