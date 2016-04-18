@@ -21,24 +21,22 @@ public class H10_RegularExpressionMatching {
         dp = new boolean[Ls + 1][Lp + 1];
 
         dp[0][0] = true;
-
-        for (int j = 0; j < Lp; j++) {
-            if (p_ar[j] == '*' && dp[0][j-1]) dp[0][j+1] = true;
+        for (int j = 1; j <= Lp; j++){
+            if (p_ar[j-1] == '*') dp[0][j] = dp[0][j - 2];
         }
 
-        for (int i = 0; i < Ls; i++){
-            for (int j = 0; j < Lp; j++){
-                if (s_ar[i] == p_ar[j] || p_ar[j] == '.') dp[i + 1][j + 1] = dp[i][j];
-                if (p_ar[j] == '*'){
-                    if (p_ar[j-1] != s_ar[i] && p_ar[j-1] != '.') dp[i+1][j+1] = dp[i+1][j-1];
-                    else {
-                        dp[i+1][j+1] = (dp[i+1][j] || dp[i+1][j-1] || dp[i][j+1]);
-                    }
+        for (int i = 1; i <= Ls; i++){
+            for (int j = 1; j <= Lp; j++){
+                if (p_ar[j-1] != '*'){
+                    if (s_ar[i-1] == p_ar[j-1] || p_ar[j-1] == '.') dp[i][j] = dp[i-1][j-1];
+                }else{
+                    if (s_ar[i-1] != p_ar[j-1] && p_ar[j-1] == '.') dp[i][j] = dp[i][j-2];
+                    else dp[i][j] = dp[i][j-2] || dp[i][j-1] || dp[i-1][j];
                 }
             }
         }
 
-        return dp[Ls][Lp];
+       return dp[Ls][Lp];
 
     }
 }

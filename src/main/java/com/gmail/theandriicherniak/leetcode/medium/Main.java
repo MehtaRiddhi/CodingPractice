@@ -1,7 +1,6 @@
 package com.gmail.theandriicherniak.leetcode.medium;
 
-
-import java.util.*;
+import com.gmail.theandriicherniak.leetcode.medium.M298_BinaryTreeLongestConsecutiveSequence.TreeNode;
 
 /**
  * Created by andriicherniak on 11/23/15.
@@ -10,27 +9,18 @@ public class Main {
     public static void main(java.lang.String[] args) {
         System.out.println("running medium ");
 
+        M298_BinaryTreeLongestConsecutiveSequence t = new M298_BinaryTreeLongestConsecutiveSequence();
+        TreeNode t1 = t.new TreeNode(1);
+        TreeNode t2 = t.new TreeNode(2);
+        TreeNode t3 = t.new TreeNode(3);
+        TreeNode t4 = t.new TreeNode(4);
+        TreeNode t5 = t.new TreeNode(5);
 
-        M120_Triangle t = new M120_Triangle();
-        List<List<Integer>> data = new ArrayList<List<Integer>>();
-        ArrayList<Integer> v1 = new ArrayList<Integer>();
-        ArrayList<Integer> v2 = new ArrayList<Integer>();
-        ArrayList<Integer> v3 = new ArrayList<Integer>();
+        t1.right = t3;
+        t3.left = t2;
+        t3.right = t4;
+        t4.right = t5;
 
-
-        v1.add(-1);
-
-        v2.add(3);
-        v2.add(2);
-
-        v3.add(-3);
-        v3.add(1);
-        v3.add(-1);
-
-        data.add(v1);
-        data.add(v2);
-        data.add(v3);
-
-        t.minimumTotal(data);
+        System.out.println(t.longestConsecutive(t1));
     }
 }
