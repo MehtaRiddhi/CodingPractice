@@ -12,22 +12,23 @@ public class M259_3SumSmaller {
 
         Arrays.sort(nums);
         int counter = 0;
-        int i = 0;
-        int j;
-        int upperLimit1 = L-1;
-        int upperLimit2;
 
-        while (i < L - 2 && (nums[i] + nums[i+1] + nums[i+2] < target)){
-            while (nums[i] + nums[i+1] + nums[upperLimit1] >= target && upperLimit1 >= i + 2) upperLimit1 --;
-            j = i + 1;
-            while (j < L - 1 && (nums[i] + nums[j] + nums[j+1] < target)){
-                upperLimit2 = upperLimit1;
-                while (nums[i] + nums[j] + nums[upperLimit2] >= target && upperLimit2 >= j + 1) upperLimit2 --;
-                counter += upperLimit2 - j;
-                j++;
+        int id1 = 0;
+        int id2, id3;
+        while (id1 < L -2){
+            int v1 = nums[id1];
+            id2 = id1 + 1;
+            id3 = L - 1;
+            while (id2 < id3){
+                if (v1 + nums[id2] + nums[id3] >= target) id3 --;
+                else if (v1 + nums[id2] + nums[id3] < target){
+                    counter += id3 - id2;
+                    id2 ++;
+                }
             }
-            i++;
+            id1 ++;
         }
+
         return counter;
     }
 }

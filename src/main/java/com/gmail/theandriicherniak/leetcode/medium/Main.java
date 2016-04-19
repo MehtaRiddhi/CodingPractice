@@ -8,6 +8,6 @@ public class Main {
         System.out.println("running medium ");
 
         M259_3SumSmaller ss = new M259_3SumSmaller();
-        System.out.println(ss.threeSumSmaller(new int[]{-2, 0, 1, 3}, 2));
+        System.out.println(ss.threeSumSmaller(new int[]{0,0,0}, 0));
     }
 }
