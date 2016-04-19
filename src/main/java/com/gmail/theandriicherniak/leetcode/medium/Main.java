@@ -7,7 +7,8 @@ public class Main {
     public static void main(java.lang.String[] args) {
         System.out.println("running medium ");
 
-        M259_3SumSmaller ss = new M259_3SumSmaller();
-        System.out.println(ss.threeSumSmaller(new int[]{0,0,0}, 0));
+        M163_MissingRanges mr = new M163_MissingRanges();
+        for (String ss : mr.findMissingRanges(new int[]{0, 1, 3, 50, 75}, 0, 99))
+            System.out.println(ss);
     }
 }
