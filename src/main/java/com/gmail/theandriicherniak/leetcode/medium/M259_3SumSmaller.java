@@ -13,16 +13,17 @@ public class M259_3SumSmaller {
         Arrays.sort(nums);
         int counter = 0;
         int i = 0;
-        int j, k;
-        while (i < L - 2 && (nums[i] <= 0 || nums[i] < target)){
-            j = i + 1;
-            while (j < L - 1 && (nums[j] <= 0 || nums[i] + nums[j] < target)){
+        int j;
+        int upperLimit1 = L-1;
+        int upperLimit2;
 
-                k = j + 1;
-                while (k < L && nums[i] + nums[j] + nums[k] < target){
-                    counter ++;
-                    k++;
-                }
+        while (i < L - 2 && (nums[i] + nums[i+1] + nums[i+2] < target)){
+            while (nums[i] + nums[i+1] + nums[upperLimit1] >= target && upperLimit1 >= i + 2) upperLimit1 --;
+            j = i + 1;
+            while (j < L - 1 && (nums[i] + nums[j] + nums[j+1] < target)){
+                upperLimit2 = upperLimit1;
+                while (nums[i] + nums[j] + nums[upperLimit2] >= target && upperLimit2 >= j + 1) upperLimit2 --;
+                counter += upperLimit2 - j;
                 j++;
             }
             i++;
