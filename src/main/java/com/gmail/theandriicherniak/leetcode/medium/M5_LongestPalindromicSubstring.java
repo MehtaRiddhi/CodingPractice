@@ -4,7 +4,6 @@ package com.gmail.theandriicherniak.leetcode.medium;
  * Created by andriicherniak on 4/19/16.
  */
 public class M5_LongestPalindromicSubstring {
-
     public String longestPalindrome(String s) {
         StringBuilder sb = new StringBuilder();
         char[] ar = s.toCharArray();
