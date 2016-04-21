@@ -4,7 +4,10 @@ public class Main {
     public static void main(java.lang.String[] args){
         System.out.println("running hard examples");
 
-        H214_ShortestPalindrome sp = new H214_ShortestPalindrome();
-        System.out.println(sp.shortestPalindrome("babbbabbaba"));
+        H336_PalindromePairs pp = new H336_PalindromePairs();
+        System.out.println(pp.palindromePairs(new String[]{
+                "ab","ba","abc","cba"
+        }));
+
     }
 }
