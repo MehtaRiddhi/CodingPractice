@@ -4,9 +4,7 @@ public class Main {
     public static void main(java.lang.String[] args){
         System.out.println("running hard examples");
 
-        H327_CountRangeSum rs = new H327_CountRangeSum();
-        System.out.println(rs.countRangeSum(new int[]{2147483647,-2147483648,-1,0}, -1, 0));
-
-
+        H239_SlidingWindowMaximum m = new H239_SlidingWindowMaximum();
+        for (int v : m.maxSlidingWindow(new int[]{1,3,-1,-3,5,3,6,7}, 3)) System.out.println(v);
     }
 }
