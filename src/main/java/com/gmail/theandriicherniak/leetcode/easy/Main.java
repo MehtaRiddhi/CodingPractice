@@ -7,8 +7,7 @@ public class Main {
     public static void main(String[] args){
         System.out.println("runing easy ");
 
-        M190_ReverseBits r = new M190_ReverseBits();
-        System.out.println(r.reverseBits(1));
-
+        E67_AddBinary b = new E67_AddBinary();
+        System.out.println(b.addBinary("11", "1"));
     }
 }
