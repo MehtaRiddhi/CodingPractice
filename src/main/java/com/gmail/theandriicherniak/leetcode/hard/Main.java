@@ -3,8 +3,12 @@ package com.gmail.theandriicherniak.leetcode.hard;
 public class Main {
     public static void main(java.lang.String[] args){
         System.out.println("running hard examples");
+        H295_FindMedianDataStream m = new H295_FindMedianDataStream();
+        m.addNum(2);
+        m.addNum(3);
+        System.out.println(m.findMedian());
+        m.addNum(4);
+        System.out.println(m.findMedian());
 
-        H239_SlidingWindowMaximum m = new H239_SlidingWindowMaximum();
-        for (int v : m.maxSlidingWindow(new int[]{1,3,-1,-3,5,3,6,7}, 3)) System.out.println(v);
     }
 }
