@@ -11,16 +11,30 @@ public class H239_SlidingWindowMaximum {
         if (L < k || k <= 0) return new int[0];
         int [] result = new int [L-k+1];
 
-        PriorityQueue<Integer> q = new PriorityQueue<Integer>(Collections.<Integer>reverseOrder());
+        int maxVal = nums[0];
+        int maxId = -1;
 
-        for (int i = 0; i < k; i++) q.add(nums[i]);
-        result[0] = q.peek();
-
-        for (int i = k; i < L; i++) {
-            q.add(nums[i]);
-            q.remove(nums[i-k]);
-
-            result[i-k+1] = q.peek();
+        int begin = 0;
+        int end = k -1;
+        while (end < L){
+            if (maxId < begin){
+                maxId = begin;
+                maxVal = nums[begin];
+                for (int i = begin + 1; i <= end; i++){
+                    if (nums[i] > maxVal){
+                        maxId = i;
+                        maxVal = nums[i];
+                    }
+                }
+            }else {
+                if (nums[end] > maxVal){
+                    maxId = end;
+                    maxVal = nums[end];
+                }
+            }
+            result[begin] = maxVal;
+            begin ++;
+            end ++;
         }
 
         return result;
