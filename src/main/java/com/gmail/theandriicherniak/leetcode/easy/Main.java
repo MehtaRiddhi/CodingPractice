@@ -7,7 +7,7 @@ public class Main {
     public static void main(String[] args){
         System.out.println("runing easy ");
 
-        E67_AddBinary b = new E67_AddBinary();
-        System.out.println(b.addBinary("11", "1"));
+        E278_FirstBadVersion v = new E278_FirstBadVersion();
+        System.out.println(v.firstBadVersion(100));
     }
 }
