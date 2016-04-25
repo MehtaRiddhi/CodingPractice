@@ -6,56 +6,41 @@ package com.gmail.theandriicherniak.leetcode.hard;
 import java.util.*;
 
 public class H301_RemoveInvalidParentheses {
+    private void DFS(String s, int L, int i, int removeL, int removeR, int openCount, StringBuilder sb, HashSet<String> result){
+        if (i == L && removeL == 0 && removeR == 0 && openCount == 0) result.add(sb.toString());
+        if (i >= L || removeL < 0 || removeR < 0 || openCount < 0) return;
 
-    private boolean matchedParenthesis(char [] ar, int L){
-        Stack<Character> stack = new Stack<Character>();
-        for (int i = 0; i < L; i++){
-            if (ar[i] == '(' || ar[i] == ')'){
-                if (stack.empty()) stack.push(ar[i]);
-                else if (ar[i] == ')' && stack.peek() == '(') stack.pop();
-                else stack.push(ar[i]);
-            }
-        }
 
-        return stack.empty();
+        char ch = s.charAt(i);
+        int len = sb.length();
+        if (ch == '('){
+            DFS(s, L, i + 1, removeL - 1, removeR, openCount, sb, result);
+            DFS(s, L, i + 1, removeL, removeR, openCount + 1, sb.append(ch), result);
+        }else if (ch == ')'){
+            DFS(s, L, i + 1, removeL, removeR - 1, openCount, sb, result);
+            DFS(s, L, i + 1, removeL, removeR, openCount - 1, sb.append(ch), result);
+        }else DFS(s, L, i + 1, removeL, removeR, openCount, sb.append(ch), result);
+
+        sb.setLength(len);
+
     }
-    private void removeParenthesis(char [] ar, int from, int to, int L, int count, HashSet<String> result){
-        if (count == 0){
 
-            if (matchedParenthesis(ar, L)){
-                StringBuilder sb = new StringBuilder();
-                for (int i = 0; i < L; i++) if (ar[i] != ' ') sb.append(ar[i]);
-                result.add(sb.toString());
-            }
-        }else {
-            char ch;
-            for (int i = from; i <= to; i++) {
-                if (ar[i] == '(' || ar[i] == ')'){
-                    ch = ar[i];
-                    ar[i] = ' ';
-                    removeParenthesis(ar, i + 1, to, L, count - 1, result);
-                    ar[i] = ch;
-                }
-            }
-        }
-    }
     public List<String> removeInvalidParentheses(String s) {
-        HashSet<String> rr = new HashSet<String>();
-        ArrayList<String> result = new ArrayList<String>();
-        char [] ar = s.toCharArray();
-        int L = ar.length;
+        HashSet<String> result = new HashSet<String>();
+        int removeL = 0;
+        int removeR = 0;
+        int L = s.length();
 
-        if (matchedParenthesis(ar, L)) result.add(s);
-        else {
-            for (int count = 1; count <= L; count++){
-                removeParenthesis(ar, 0, L-1, L, count, rr);
-                if (rr.size() > 0) {
-                    for (String rs : rr) result.add(rs);
-                    return result;
-                }
+        for (int i = 0; i < L; i++){
+            if (s.charAt(i) == '(') removeL ++;
+            if (s.charAt(i) == ')'){
+                if (removeL > 0) removeL --;
+                else removeR ++;
             }
         }
 
-        return result;
+        DFS(s, L, 0, removeL, removeR, 0, new StringBuilder(), result);
+
+        return new ArrayList<String>(result);
     }
 }
