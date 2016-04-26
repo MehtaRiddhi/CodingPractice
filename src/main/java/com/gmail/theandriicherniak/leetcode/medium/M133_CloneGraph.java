@@ -19,35 +19,22 @@ public class M133_CloneGraph {
         }
     }
 
+    private UndirectedGraphNode DFShelper(UndirectedGraphNode x, HashMap<Integer, UndirectedGraphNode> map){
+        UndirectedGraphNode new_x = new UndirectedGraphNode(x.label);
+        map.put(x.label, new_x);
+
+        for (UndirectedGraphNode n : x.neighbors){
+            if (!map.containsKey(n.label)) DFShelper(n, map);
+            new_x.neighbors.add(map.get(n.label));
+        }
+        return new_x;
+    }
+
 
     public UndirectedGraphNode cloneGraph(UndirectedGraphNode node) {
         if (node == null) return null;
-        HashMap<UndirectedGraphNode, UndirectedGraphNode> map = new HashMap<UndirectedGraphNode, UndirectedGraphNode>();
+        HashMap<Integer, UndirectedGraphNode> map = new HashMap<Integer, UndirectedGraphNode>();
 
-        Stack<UndirectedGraphNode> stack = new Stack<UndirectedGraphNode>();
-        stack.push(node);
-        UndirectedGraphNode n;
-        while (!stack.empty()){
-            n = stack.pop();
-            if (!map.containsKey(n)) {
-                map.put(n, new UndirectedGraphNode(n.label));
-                for (UndirectedGraphNode next : n.neighbors) stack.push(next);
-            }
-        }
-
-        stack.setSize(0);
-
-        stack.push(node);
-        while (!stack.empty()){
-            n = stack.pop();
-            if (n.neighbors.size() > map.get(n).neighbors.size()){
-                for (UndirectedGraphNode nn : n.neighbors){
-                    map.get(n).neighbors.add(map.get(nn));
-                    stack.push(nn);
-                }
-            }
-        }
-
-        return map.get(node);
+        return DFShelper(node, map);
     }
 }
