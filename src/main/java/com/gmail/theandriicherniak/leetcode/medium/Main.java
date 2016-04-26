@@ -7,8 +7,8 @@ public class Main {
     public static void main(java.lang.String[] args) {
         System.out.println("running medium ");
 
-        M161_OneEditDistance d = new M161_OneEditDistance();
-        System.out.println(d.isOneEditDistance("ac", "a"));
+        M277_FindCelebrity fc = new M277_FindCelebrity();
+        System.out.println(fc.findCelebrity(3));
 
 
     }
