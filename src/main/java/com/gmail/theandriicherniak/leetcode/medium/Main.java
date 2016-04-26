@@ -7,9 +7,7 @@ public class Main {
     public static void main(java.lang.String[] args) {
         System.out.println("running medium ");
 
-        M277_FindCelebrity fc = new M277_FindCelebrity();
-        System.out.println(fc.findCelebrity(3));
-
-
+        M43_MultiplyStrings mm = new M43_MultiplyStrings();
+        System.out.println(mm.multiply("156", "551"));
     }
 }

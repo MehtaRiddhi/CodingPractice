@@ -1,9 +1,6 @@
 package com.gmail.theandriicherniak.leetcode.medium;
 
-import java.util.ArrayList;
 import java.util.HashSet;
-import java.util.Random;
-import java.util.concurrent.SynchronousQueue;
 
 /**
  * Created by andriicherniak on 4/26/16.
