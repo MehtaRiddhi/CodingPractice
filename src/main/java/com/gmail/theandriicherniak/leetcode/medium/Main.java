@@ -7,7 +7,7 @@ public class Main {
     public static void main(java.lang.String[] args) {
         System.out.println("running medium ");
 
-        M71_SimplifyPath path = new M71_SimplifyPath();
-        System.out.println(path.simplifyPath("/home/////"));
+        M69_Sqrt sqrt = new M69_Sqrt();
+        System.out.println(sqrt.mySqrt(2147483647));
     }
 }
