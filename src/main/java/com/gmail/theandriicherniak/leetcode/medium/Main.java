@@ -1,7 +1,5 @@
 package com.gmail.theandriicherniak.leetcode.medium;
 
-import java.util.HashSet;
-
 /**
  * Created by andriicherniak on 11/23/15.
  */
