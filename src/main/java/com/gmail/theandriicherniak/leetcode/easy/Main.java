@@ -7,7 +7,7 @@ public class Main {
     public static void main(String[] args){
         System.out.println("runing easy ");
 
-        E278_FirstBadVersion v = new E278_FirstBadVersion();
-        System.out.println(v.firstBadVersion(100));
+        E28_ImplementstrStr strStr = new E28_ImplementstrStr();
+        System.out.println(strStr.strStr("aaa", "aa"));
     }
 }
