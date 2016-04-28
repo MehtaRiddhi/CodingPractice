@@ -7,7 +7,7 @@ public class Main {
     public static void main(java.lang.String[] args) {
         System.out.println("running medium ");
 
-        M69_Sqrt sqrt = new M69_Sqrt();
-        System.out.println(sqrt.mySqrt(2147483647));
+        M334_IncreasingTripletSubsequence ts = new M334_IncreasingTripletSubsequence();
+        System.out.println(ts.increasingTriplet(new int[]{5, 4, 3, 2, 1}));
     }
 }
