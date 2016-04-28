@@ -7,7 +7,7 @@ public class Main {
     public static void main(java.lang.String[] args) {
         System.out.println("running medium ");
 
-        M334_IncreasingTripletSubsequence ts = new M334_IncreasingTripletSubsequence();
-        System.out.println(ts.increasingTriplet(new int[]{5, 4, 3, 2, 1}));
+        M80_RemoveDuplicatesSortedArrayII d = new M80_RemoveDuplicatesSortedArrayII();
+        System.out.println(d.removeDuplicates(new int [] {1,1,1,2,2,3}));
     }
 }
