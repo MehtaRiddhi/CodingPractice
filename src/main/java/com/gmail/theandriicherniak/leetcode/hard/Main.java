@@ -1,11 +1,22 @@
 package com.gmail.theandriicherniak.leetcode.hard;
 
+import java.util.HashSet;
+import java.util.Set;
+
 public class Main {
     public static void main(java.lang.String[] args){
         System.out.println("running hard examples");
 
-        H42_TrappingRainWater water = new H42_TrappingRainWater();
-        System.out.println(water.trap(new int[]{0,1,0,2,1,0,1,3,2,1,2,1}));
+        H140_WordBreakII words = new H140_WordBreakII();
+        Set<String> wordDict = new HashSet<String>();
+
+        for (String s : new String[]{"aaaa","aaa"}){
+            wordDict.add(s);
+        }
+        System.out.println(words.wordBreak(
+                "aaaaaaa",
+                wordDict));
+
 
     }
 }
