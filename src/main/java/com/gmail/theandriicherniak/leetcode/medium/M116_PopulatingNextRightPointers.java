@@ -13,19 +13,19 @@ public class M116_PopulatingNextRightPointers {
         }
     }
 
-    private void connectTwo(TreeLinkNode left, TreeLinkNode right){
-        while (left != null && right != null) {
-            left.next = right;
-            left = left.right;
-            right = right.left;
-        }
-    }
-
     public void connect(TreeLinkNode root) {
-        if (root != null){
-            connectTwo(root.left, root.right);
-            connect(root.left);
-            connect(root.right);
+        if (root == null) return;
+
+        TreeLinkNode tmp;
+
+        while (root.left != null){
+            tmp = root;
+            while (tmp != null){
+                tmp.left.next = tmp.right;
+                if (tmp.next != null) tmp.right.next = tmp.next.left;
+                tmp = tmp.next;
+            }
+            root = root.left;
         }
     }
 }
