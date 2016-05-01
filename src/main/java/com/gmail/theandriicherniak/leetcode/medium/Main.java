@@ -7,11 +7,15 @@ public class Main {
     public static void main(java.lang.String[] args) {
         System.out.println("running medium ");
 
-        M54_SpiralMatrix m = new M54_SpiralMatrix();
-        System.out.println(m.spiralOrder(new int[][]{
-                new int[]{1, 2, 3},
-                new int[]{4, 5, 6},
-                new int[]{7, 8, 9}
-        }));
+        M289_GameOfLife life = new M289_GameOfLife();
+        int [][] board = new int[][]{
+                new int[]{0,0,0,0,0,0},
+                new int[]{0,0,1,1,0,0},
+                new int[]{0,1,0,0,1,0},
+                new int[]{0,0,1,1,0,0},
+                new int[]{0,0,0,0,0,0}
+        };
+        life.gameOfLife(board);
+
     }
 }
