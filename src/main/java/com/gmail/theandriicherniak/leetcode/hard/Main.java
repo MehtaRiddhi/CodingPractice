@@ -1,21 +1,45 @@
 package com.gmail.theandriicherniak.leetcode.hard;
 
-import java.util.HashSet;
-import java.util.Set;
+import java.util.*;
 
 public class Main {
-    public static void main(java.lang.String[] args){
+    public static void main(java.lang.String[] args) {
         System.out.println("running hard examples");
 
-        H140_WordBreakII words = new H140_WordBreakII();
-        Set<String> wordDict = new HashSet<String>();
 
-        for (String s : new String[]{"aaaa","aaa"}){
-            wordDict.add(s);
-        }
-        System.out.println(words.wordBreak(
-                "aaaaaaa",
-                wordDict));
+        int[][] data = new int[][]{
+                new int[]{3, 0, 1, 4, 2},
+                new int[]{5, 6, 3, 2, 1},
+                new int[]{1, 2, 0, 1, 5},
+                new int[]{4, 1, 0, 1, 7},
+                new int[]{1, 0, 3, 0, 5}
+        };
+
+        H308_RangeSumQuery2D rsq = new H308_RangeSumQuery2D(data);
+
+        System.out.println(rsq.sumRegion(2,1,4,3));
+        rsq.update(3,2,2);
+        System.out.println(rsq.sumRegion(2,1,4,3));
+
+
+//        int v = 10;
+//        System.out.println(Integer.toBinaryString(v));
+//        v += v & (-v);
+//        System.out.println(Integer.toBinaryString(v));
+//        v += v & (-v);
+//        System.out.println(Integer.toBinaryString(v));
+//        v += v & (-v);
+//        System.out.println(Integer.toBinaryString(v));
+
+
+
+
+
+
+
+
+
+
 
 
     }
