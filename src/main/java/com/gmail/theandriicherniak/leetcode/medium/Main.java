@@ -7,7 +7,11 @@ public class Main {
     public static void main(java.lang.String[] args) {
         System.out.println("running medium ");
 
-        M80_RemoveDuplicatesSortedArrayII d = new M80_RemoveDuplicatesSortedArrayII();
-        System.out.println(d.removeDuplicates(new int [] {1,1,1,2,2,3}));
+        M54_SpiralMatrix m = new M54_SpiralMatrix();
+        System.out.println(m.spiralOrder(new int[][]{
+                new int[]{1, 2, 3},
+                new int[]{4, 5, 6},
+                new int[]{7, 8, 9}
+        }));
     }
 }
