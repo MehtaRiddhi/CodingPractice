@@ -7,7 +7,13 @@ public class Main {
     public static void main(String [] args){
         System.out.println("general");
 
-        ModelRaindrops drops = new ModelRaindrops();
-        System.out.println(drops.raindropsNeeded(1.0, 0.01));
+        byte [] bitmap = new byte[40];
+
+
+        HorizontalLineBitmap line = new HorizontalLineBitmap();
+        line.drawLine(bitmap, 32, 10, 3, 5, 20);
+        for (byte v : bitmap){
+            System.out.println(v);
+        }
     }
 }

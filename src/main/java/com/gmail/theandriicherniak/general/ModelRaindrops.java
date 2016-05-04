@@ -29,8 +29,7 @@ public class ModelRaindrops {
         if (sidewalkLength == raindropLength) return 1;
         Random rnd = new Random();
         TreeMap<Double, Drop> t = new TreeMap<Double, Drop>();
-
-
+        
         double start, end;
 
         Map.Entry<Double, Drop> pred, succ;
