@@ -13,7 +13,7 @@ public class Main {
         HorizontalLineBitmap line = new HorizontalLineBitmap();
         line.drawLine(bitmap, 32, 10, 3, 5, 20);
         for (byte v : bitmap){
-            System.out.println(v);
+            System.out.println(Integer.toBinaryString(v & 0xFF));
         }
     }
 }

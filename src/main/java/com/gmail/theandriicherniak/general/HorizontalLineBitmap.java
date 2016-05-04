@@ -14,11 +14,14 @@ public class HorizontalLineBitmap {
         int maxBit = width * heigth -1 ;
         maxBit = Math.min(maxBit, bitmap.length * 8 - 1);
 
-        for (int pos = Math.min(maxBit, fromBit); pos <= Math.min(maxBit, toBit); pos ++){
+        fromBit = Math.min(fromBit, maxBit);
+        toBit = Math.min(toBit, maxBit);
+
+        for (int pos = fromBit; pos <= toBit; pos ++){
             int bitmap_id = pos / 8;
             int element_id = pos % 8;
-
-            bitmap[bitmap_id] |= (1 << element_id) & 0xFF;
+            
+            bitmap[bitmap_id] |= (1 << (7 - element_id)) & 0xFF;
         }
     }
 }
