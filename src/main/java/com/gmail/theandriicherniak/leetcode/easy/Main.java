@@ -7,5 +7,8 @@ public class Main {
     public static void main(String[] args){
         System.out.println("runing easy ");
 
+        E342_PowerFour four = new E342_PowerFour();
+        System.out.println(four.isPowerOfFour(8));
+
     }
 }

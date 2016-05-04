@@ -3,7 +3,7 @@ package com.gmail.theandriicherniak.leetcode.easy;
 /**
  * Created by andriicherniak on 3/17/16.
  */
-public class M191_Number1Bits {
+public class E191_Number1Bits {
     public int hammingWeight(int n) {
         int count = 0;
         int bitMask = 1;
