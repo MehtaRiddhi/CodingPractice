@@ -8,16 +8,17 @@ public class M318_MaximumProductWordLengths {
         int result = 0;
         int L = words.length;
         if (L <= 1) return 0;
-        String word;
         int [] bitmap = new int[L];
+        int [] wL = new int[L];
 
         for (int i = 0; i < L; i++){
-            word = words[i];
-            for (int j = 0; j < word.length(); j++) bitmap[i] |= 1 << (word.charAt(j) - 'a');
+            char [] ar = words[i].toCharArray();
+            wL[i] = ar.length;
+            for (int j = 0; j < wL[i]; j++) bitmap[i] |= 1 << (ar[j] - 'a');
         }
         for (int i = 0; i < L - 1; i++){
             for (int j = i + 1; j < L; j++){
-                if ((bitmap[i] & bitmap[j]) == 0) result = Math.max(result, words[i].length() * words[j].length());
+                if ((bitmap[i] & bitmap[j]) == 0) result = Math.max(result, wL[i] * wL[j]);
             }
         }
         return result;
