@@ -7,15 +7,8 @@ public class Main {
     public static void main(java.lang.String[] args) {
         System.out.println("running medium ");
 
-        M289_GameOfLife life = new M289_GameOfLife();
-        int [][] board = new int[][]{
-                new int[]{0,0,0,0,0,0},
-                new int[]{0,0,1,1,0,0},
-                new int[]{0,1,0,0,1,0},
-                new int[]{0,0,1,1,0,0},
-                new int[]{0,0,0,0,0,0}
-        };
-        life.gameOfLife(board);
+        M347_TopKFrequentElements topK = new M347_TopKFrequentElements();
+        System.out.println(topK.topKFrequent(new int[]{1,1,1,2,2,3}, 2));
 
     }
 }

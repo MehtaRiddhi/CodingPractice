@@ -20,7 +20,7 @@ public class HorizontalLineBitmap {
         for (int pos = fromBit; pos <= toBit; pos ++){
             int bitmap_id = pos / 8;
             int element_id = pos % 8;
-            
+
             bitmap[bitmap_id] |= (1 << (7 - element_id)) & 0xFF;
         }
     }
