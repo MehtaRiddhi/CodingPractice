@@ -16,96 +16,86 @@ public class H297_SerializeDeserializeBinaryTree {
         }
     }
 
-    // Encodes a tree to a single string.
     public String serialize(TreeNode root) {
-
-        if (root == null) return "null";
-
         StringBuilder sb = new StringBuilder();
+        ArrayList<String> nodes = new ArrayList<String>();
 
         ArrayList<TreeNode> l1 = new ArrayList<TreeNode>();
         ArrayList<TreeNode> l2;
-
-        boolean toContinue = true;
-
         l1.add(root);
 
-        while (toContinue) {
-            toContinue = false;
+        while (!l1.isEmpty()) {
             l2 = new ArrayList<TreeNode>();
 
-            for (TreeNode n : l1){
-                if (n == null) sb.append("null,");
-                else {
-                    sb.append(n.val + ",");
+            for (TreeNode n : l1) {
+                if (n != null) {
+                    nodes.add("" + n.val);
                     l2.add(n.left);
                     l2.add(n.right);
-                    if (n.left != null) toContinue = true;
-                    if (n.right != null) toContinue = true;
-                }
+                } else nodes.add("null");
             }
 
             l1 = l2;
         }
 
-        String result = sb.toString();
-        int L = result.length();
+        int L = nodes.size();
+        int i = L - 1;
+        while (i >= 0 && nodes.get(i).equals("null")) i--;
+        if (i >= 0) {
+            sb.append(nodes.get(0));
+            for (int j = 1; j <= i; j++) {
+                sb.append("," + nodes.get(j));
+            }
+        }
 
-        return result.substring(0, L-1);
+        return sb.toString();
     }
 
-    // Decodes your encoded data to tree.
-
     public TreeNode deserialize(String data) {
-        String[] nodeValues = data.split(",");
-        int L = nodeValues.length;
-        if (L == 0 || nodeValues[0].equals("null")) return null;
+        if (data.equals("")) return null;
+        String[] ar = data.split(",");
 
-        TreeNode root = new TreeNode(Integer.parseInt(nodeValues[0]));
+        int L = ar.length;
+        if (L == 0) return null;
+
+        if (ar[0].equals("null")) return null;
+
+        TreeNode root = new TreeNode(Integer.parseInt(ar[0]));
         ArrayList<TreeNode> l1 = new ArrayList<TreeNode>();
         ArrayList<TreeNode> l2;
 
         l1.add(root);
-
         int pos = 1;
-        TreeNode left, right;
-
-        l2 = new ArrayList<TreeNode>();
+        int nonNullL = 1;
 
         while (pos < L) {
-            int L1 = l1.size();
+            l2 = new ArrayList<TreeNode>();
+            for (int i = 1; i <= 2 * nonNullL; i++) {
+                if (pos < L){
+                    String v = ar[pos];
+                    if (v.equals("null")) l2.add(null);
+                    else l2.add(new TreeNode(Integer.parseInt(v)));
 
-            for (int i = 0; i < L1; i++) {
+                    pos ++;
+                }else l2.add(null);
+            }
+            int cnt = 0;
+            int j = 0;
+            for (int i = 0; i < l1.size(); i++){
                 TreeNode n = l1.get(i);
-
-                if (n != null) {
-                    if (pos < L) {
-                        left = nodeValues[pos].equals("null") ? null : new TreeNode(Integer.parseInt(nodeValues[pos]));
-                        pos++;
-                    }else left = null;
-
-                    if (pos < L) {
-                        right = nodeValues[pos].equals("null") ? null : new TreeNode(Integer.parseInt(nodeValues[pos]));
-                        pos++;
-                    }else right = null;
-
-                    n.left = left;
-                    n.right = right;
-
-                    System.out.print("node " + n.val + " ");
-                    if (n.left == null) System.out.print("null ");
-                    else System.out.print(n.left.val + " ");
-                    if (n.right == null) System.out.println("null");
-                    else System.out.println(n.right.val);
-
-                    l2.add(left);
-                    l2.add(right);
+                if (n != null){
+                    n.left = l2.get(j);
+                    n.right = l2.get(j + 1);
+                    j += 2;
                 }
             }
-
-//            System.out.println("new level");
+            for (int i = 0; i < l2.size(); i++){
+                if (l2.get(i) != null) cnt ++;
+            }
 
             l1 = l2;
+
+            nonNullL = cnt;
         }
 
         return root;

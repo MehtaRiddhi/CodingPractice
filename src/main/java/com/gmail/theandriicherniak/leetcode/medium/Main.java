@@ -10,12 +10,11 @@ public class Main {
         System.out.println("running medium ");
 
 
-        ArrayList<Integer> digits = new ArrayList<Integer>();
-        digits.add(1);
-        digits.add(2);
-        digits.add(3);
+        M324_WiggleSortII sort = new M324_WiggleSortII();
+        int [] nums = new int[]{1, 3, 2, 2, 3, 1};
+        sort.wiggleSort(nums);
 
-        M284_PeekingIterator iter = new M284_PeekingIterator(digits.iterator());
+        for (int v : nums) System.out.print(v + " ");
 
     }
 }
