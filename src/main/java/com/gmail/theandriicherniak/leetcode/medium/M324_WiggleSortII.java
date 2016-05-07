@@ -1,6 +1,5 @@
 package com.gmail.theandriicherniak.leetcode.medium;
 
-import java.util.Arrays;
 import java.util.Random;
 
 /**
@@ -39,7 +38,7 @@ public class M324_WiggleSortII {
         return result;
     }
 
-    public int KthSmallest(int[] nums, int from, int to, int k) {
+    private int KthSmallest(int[] nums, int from, int to, int k) {
         if (k < from || k > to) return -1;
         if (to == from) return nums[from];
 
@@ -52,15 +51,29 @@ public class M324_WiggleSortII {
         else return KthSmallest(nums, pivotIndexes[1] + 1, to, k);
     }
 
-    private int A(int i, int n){
-        return (1 + 2 * i)%n;
+    private int newIndex(int index, int n) {
+        return (1 + 2 * index) % (n | 1);
     }
 
     public void wiggleSort(int[] nums) {
         int L = nums.length;
         if (L <= 1) return;
 
-        int pivot = KthSmallest(nums, 0, L - 1, L / 2);
+        double median;
+        if (L % 2 == 1) median = KthSmallest(nums, 0, L - 1, L / 2);
+        else median = 0.5 * (KthSmallest(nums, 0, L - 1, L/2 - 1) + KthSmallest(nums, 0, L - 1, L/2));
 
+        int left = 0, i = 0, right = L - 1;
+
+        while (i <= right) {
+
+            if (nums[newIndex(i, L)] > median) {
+                swap(nums, newIndex(left++, L), newIndex(i++, L));
+            } else if (nums[newIndex(i, L)] < median) {
+                swap(nums, newIndex(right--, L), newIndex(i, L));
+            } else {
+                i++;
+            }
+        }
     }
 }
