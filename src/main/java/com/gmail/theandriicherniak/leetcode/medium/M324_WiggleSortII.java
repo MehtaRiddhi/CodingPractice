@@ -1,5 +1,6 @@
 package com.gmail.theandriicherniak.leetcode.medium;
 
+import java.util.Arrays;
 import java.util.Random;
 
 /**
@@ -42,8 +43,27 @@ public class M324_WiggleSortII {
         if (k < from || k > to) return -1;
         if (to == from) return nums[from];
 
-        int pivotPos = from + rnd.nextInt(to - from + 1);
-        int pivot = nums[pivotPos];
+
+        int pivot;
+
+        if (to - from <= 3) {
+            pivot = nums[from + rnd.nextInt(to - from + 1)];
+        }else {
+
+            int[] pv = new int[3];
+            pv[0] = nums[from + rnd.nextInt(to - from + 1)];
+            pv[1] = nums[from + rnd.nextInt(to - from + 1)];
+            pv[2] = nums[from + rnd.nextInt(to - from + 1)];
+
+            if (pv[0] > pv[1]) swap(pv, 0, 1);
+            if (pv[1] > pv[2]) swap(pv, 1, 2);
+            if (pv[0] > pv[1]) swap(pv, 0, 1);
+
+
+            pivot = pv[1];
+        }
+
+
         int[] pivotIndexes = arrangeAroundPivot(nums, from, to, pivot);
 
         if (k >= pivotIndexes[0] && k <= pivotIndexes[1]) return nums[k];
@@ -61,7 +81,7 @@ public class M324_WiggleSortII {
 
         double median;
         if (L % 2 == 1) median = KthSmallest(nums, 0, L - 1, L / 2);
-        else median = 0.5 * (KthSmallest(nums, 0, L - 1, L/2 - 1) + KthSmallest(nums, 0, L - 1, L/2));
+        else median = 0.5 * (KthSmallest(nums, 0, L - 1, L / 2 - 1) + KthSmallest(nums, 0, L - 1, L / 2));
 
         int left = 0, i = 0, right = L - 1;
 
