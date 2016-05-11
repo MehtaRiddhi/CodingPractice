@@ -7,8 +7,8 @@ public class Main {
     public static void main(java.lang.String[] args) {
         System.out.println("running medium ");
 
-        M3_LongestSubstringWithoutRepeatingCharacters substring = new M3_LongestSubstringWithoutRepeatingCharacters();
-        System.out.println(substring.lengthOfLongestSubstring("pwwkew"));
+        M227_BasicCalculatorII calculatorII = new M227_BasicCalculatorII();
+        System.out.println(calculatorII.calculate("2-3*4"));
 
     }
 }
