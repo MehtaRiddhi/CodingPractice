@@ -4,8 +4,8 @@ public class Main {
     public static void main(java.lang.String[] args) {
         System.out.println("running hard examples");
 
-        H159_LongestSubstrinTwoDistinctCharacters substring = new H159_LongestSubstrinTwoDistinctCharacters();
-        System.out.println(substring.lengthOfLongestSubstringTwoDistinct("eceba"));
+        H340_LongestSubstringAtMostKDistinctCharacters substring = new H340_LongestSubstringAtMostKDistinctCharacters();
+        System.out.println(substring.lengthOfLongestSubstringKDistinct("eceba", 2));
 
     }
 }
