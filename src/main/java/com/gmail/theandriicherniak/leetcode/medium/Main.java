@@ -7,8 +7,8 @@ public class Main {
     public static void main(java.lang.String[] args) {
         System.out.println("running medium ");
 
-        M227_BasicCalculatorII calculatorII = new M227_BasicCalculatorII();
-        System.out.println(calculatorII.calculate("2-3*4"));
+        M151_ReverseWordsString reverse = new M151_ReverseWordsString();
+        System.out.println(reverse.reverseWords("a"));
 
     }
 }
