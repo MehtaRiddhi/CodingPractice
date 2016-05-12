@@ -7,8 +7,10 @@ public class Main {
     public static void main(java.lang.String[] args) {
         System.out.println("running medium ");
 
-        M151_ReverseWordsString reverse = new M151_ReverseWordsString();
-        System.out.println(reverse.reverseWords("a"));
+        M186_ReverseWordsStringII reverse = new M186_ReverseWordsStringII();
+        char [] data = "hi!".toCharArray();
+        reverse.reverseWords(data);
+        for (char ch : data) System.out.print(ch);
 
     }
 }
