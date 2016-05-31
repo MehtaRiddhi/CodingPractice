@@ -14,6 +14,7 @@ public class Main {
         List<String> input = new ArrayList<String>();
         input.add("aaajhsdbv");
         input.add("nndhjvsjdhfg");
+        input.add("");
         input.add("jhbjugsdfb");
 
         String ss = encode.encode(input);
