@@ -7,7 +7,7 @@ public class Main {
     public static void main(String[] args){
         System.out.println("runing easy ");
 
-        E326_PowerThree three = new E326_PowerThree();
-        System.out.println(three.isPowerOfThree(3*3*2));
+        E345_ReverseVowels vv = new E345_ReverseVowels();
+        System.out.println(vv.reverseVowels("leetcode"));
     }
 }
