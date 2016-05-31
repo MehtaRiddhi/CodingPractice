@@ -10,5 +10,7 @@ public class Main {
     public static void main(java.lang.String[] args) {
         System.out.println("running medium ");
 
+        M5_LongestPalindromicSubstring palindrom = new M5_LongestPalindromicSubstring();
+        System.out.println(palindrom.longestPalindrome("abb"));
     }
 }
