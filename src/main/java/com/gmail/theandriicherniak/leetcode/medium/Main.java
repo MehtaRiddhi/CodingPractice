@@ -10,9 +10,7 @@ public class Main {
     public static void main(java.lang.String[] args) {
         System.out.println("running medium ");
 
-        M343_IntegerBreak b = new M343_IntegerBreak();
-        for (int i = 8; i <= 8; i++) {
-            System.out.println(i + " : " + b.integerBreak(i));
-        }
+        M150_EvaluateReversePolishNotation polish = new M150_EvaluateReversePolishNotation();
+        System.out.println(polish.evalRPN(new String[]{"2", "1", "+", "3", "*"}));
     }
 }
