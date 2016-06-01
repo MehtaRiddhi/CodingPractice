@@ -10,9 +10,9 @@ public class Main {
     public static void main(java.lang.String[] args) {
         System.out.println("running medium ");
 
-        M5_LongestPalindromicSubstring_2 palindrom = new M5_LongestPalindromicSubstring_2();
-        System.out.println(palindrom.longestPalindrome("babcbabcbaccba"));
-        System.out.println(palindrom.longestPalindrome("bb"));
-
+        M343_IntegerBreak b = new M343_IntegerBreak();
+        for (int i = 8; i <= 8; i++) {
+            System.out.println(i + " : " + b.integerBreak(i));
+        }
     }
 }
