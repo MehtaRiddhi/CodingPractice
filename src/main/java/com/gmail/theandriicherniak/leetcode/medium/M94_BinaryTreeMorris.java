@@ -14,7 +14,29 @@ public class M94_BinaryTreeMorris {
              TreeNode(int x) { val = x; }
         }
 
+
     public List<Integer> inorderTraversal(TreeNode root) {
-        return null;
+        List<Integer> result = new ArrayList<Integer>();
+        TreeNode current = root;
+        TreeNode pred;
+        while (current != null){
+            if (current.left == null){
+                result.add(current.val);
+                current = current.right;
+            }else {
+                pred = current.left;
+                while (pred.right != null && pred.right != current) pred = pred.right;
+
+                if (pred.right == null) {
+                    pred.right = current;
+                    current = current.left;
+                }else {
+                    pred.right = null;
+                    result.add(current.val);
+                    current = current.right;
+                }
+            }
+        }
+        return result;
     }
 }
